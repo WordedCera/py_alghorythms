@@ -1,6 +1,10 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLineEdit
+from random import choice
 
 class HelloWindow(QWidget):
+    
+    colour_list = ["red","white","blue","yellow","green","black","grey","purple"]
+    
     def __init__(self):
         # супер - отсылка к предку
         # Вызов конструктора класса предка (QWidget)
@@ -28,30 +32,29 @@ class HelloWindow(QWidget):
 
         self.led3 = QLineEdit(self)
         self.led3.setGeometry(10,200,280,40)
-
         self.show()
 
     def btn_click1(self):
         # print("Hello, World!")
         # self.setWindowTitle("Hello World")
         # self.btn.setText(f"Hellooooooo, {self.led.text()}")
-        ans = int(self.led1.text()) + int(self.led2.text()) 
+        ans = int(self.led1.text()) + int(self.led2.text())
         self.led3.setText(f"{ans}")
-        self.btn2.setStyleSheet("background-color: red")
+        self.rnd = choice(HelloWindow.colour_list)
+        self.btn2.setStyleSheet(f"background-color: {self.rnd}")
 
     def btn_click2(self):
         # print("Hello, World!")
         # self.setWindowTitle("Hello World")
         # self.btn.setText(f"Hellooooooo, {self.led.text()}")
-        ans = int(self.led1.text()) - int(self.led2.text()) 
+        ans = int(self.led1.text()) - int(self.led2.text())
         self.led3.setText(f"{ans}")
-        self.btn2.setStyleSheet("background-color: red")
-
+        self.rnd = choice(HelloWindow.colour_list)
+        print(self.rnd)
+        self.btn2.setStyleSheet(f"background-color: {self.rnd}")
 
 if __name__ == '__main__':
-    print("Текст")
     app = QApplication([])
     window = HelloWindow()
     # btn = QPushButton(window)
     app.exec()
-
