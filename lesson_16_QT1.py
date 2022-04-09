@@ -50,8 +50,7 @@ class HelloWindow(QWidget):
         ans = int(self.led1.text()) - int(self.led2.text())
         self.led3.setText(f"{ans}")
         self.rnd = choice(HelloWindow.colour_list)
-        print(self.rnd)
-        self.btn2.setStyleSheet(f"background-color: {self.rnd}")
+        self.btn1.setStyleSheet(f"background-color: {self.rnd}")
 
 if __name__ == '__main__':
     app = QApplication([])
