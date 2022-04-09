@@ -1,0 +1,22 @@
+{    "material-icon-theme.files.associations": {
+    "*.py": "python",
+    "*_test.py": "python-misc"
+},
+"sqltools.connections": [
+    {
+        "mssqlOptions": {
+            "appName": "SQLTools",
+            "useUTC": true,
+            "encrypt": true
+        },
+        "previewLimit": 50,
+        "server": "yand.dyndns.org",
+        "port": 1433,
+        "driver": "MSSQL",
+        "name": "yand",
+        "database": "AdventureWorks",
+        "username": "northwind",
+        "password": "northwind"
+    }
+]
+}
